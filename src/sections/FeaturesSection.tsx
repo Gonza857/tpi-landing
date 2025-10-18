@@ -56,7 +56,7 @@ export function FeaturesSection() {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
             Descubre todas las características que hacen de Neocivita una
-            experiencia única de aprendizaje y diversión
+            experiencia única de aprendizaje y diversión.
           </p>
         </div>
 
