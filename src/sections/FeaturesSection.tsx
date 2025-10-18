@@ -37,7 +37,7 @@ export function FeaturesSection() {
       icon: BarChart3,
       title: "Indicadores en tiempo real",
       description:
-        "HUD visible con datos claves para el jugador entienda el impacto de sus decisiones.",
+        "HUD visible con datos claves para que el jugador entienda el impacto de sus decisiones.",
     },
     {
       icon: Trophy,

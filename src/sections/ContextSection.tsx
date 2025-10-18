@@ -51,9 +51,9 @@ export function ContextSection() {
                   🏭 Crecimiento Sin Conciencia
                 </h3>
                 <p className="text-muted-foreground">
-                  Se prioriza el crecimiento económico y urbano sin considerar
-                  las consecuencias ambientales, afectando la calidad de vida y
-                  el equilibrio ecológico.
+                  Actualmente se prioriza el crecimiento económico y urbano sin
+                  considerar las consecuencias ambientales, afectando la calidad
+                  de vida y el equilibrio ecológico.
                 </p>
               </Card>
 

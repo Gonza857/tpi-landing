@@ -10,7 +10,7 @@ function ResoursesSection() {
             Los 5 Recursos Principales
           </h2>
           <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
-            Gestiona estos recursos clave para construir una ciudad próspera y
+            Gestioná estos recursos para construir una ciudad próspera y
             sustentable.
           </p>
         </div>
