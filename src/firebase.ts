@@ -19,30 +19,45 @@
  * 4. Descomentá el código de abajo y comentá la función mock
  */
 
-import { initializeApp } from 'firebase/app'
-import { getFirestore, collection, addDoc } from 'firebase/firestore'
+import { initializeApp } from "firebase/app"
+import { getFirestore, collection, addDoc, query, orderBy, getDocs } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 }
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 
 export async function sendToFirebase(data: any) {
-  try {
-    const docRef = await addDoc(collection(db, 'quiz-results'), data)
-    console.log('Documento guardado con ID:', docRef.id)
-    return docRef.id
-  } catch (error) {
-    console.error('Error al guardar en Firebase:', error)
-    throw error
-  }
+    try {
+        const docRef = await addDoc(collection(db, "quiz-results"), data)
+        console.log("Documento guardado con ID:", docRef.id)
+        return docRef.id
+    } catch (error) {
+        console.error("Error al guardar en Firebase:", error)
+        throw error
+    }
+}
+
+export async function getResultsFromFirebase() {
+    try {
+        console.log("db", db)
+        const q = query(collection(db, "quiz-results"), orderBy("timestamp", "desc"))
+        const querySnapshot = await getDocs(q)
+        return querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }))
+    } catch (error) {
+        console.error("Error al obtener resultados de Firebase:", error)
+        throw error
+    }
 }
 
 export function getDeviceInfo() {
@@ -95,12 +110,12 @@ export function getDeviceInfo() {
 
 // FUNCIÓN MOCK PARA DESARROLLO (Reemplazá esto con el código de arriba cuando conectes Firebase)
 // export async function sendToFirebase(data: any) {
-//     // Simulación de delay de red
-//     await new Promise((resolve) => setTimeout(resolve, 1000))
-//
-//     console.log("📊 Datos que se enviarían a Firebase:", data)
-//     console.log('✅ Mock: Datos "guardados" exitosamente')
-//
-//     // En producción, esto sería reemplazado por la llamada real a Firebase
-//     return "mock-doc-id-" + Date.now()
+//   // Simulación de delay de red
+//   await new Promise((resolve) => setTimeout(resolve, 1000))
+
+//   console.log("📊 Datos que se enviarían a Firebase:", data)
+//   console.log('✅ Mock: Datos "guardados" exitosamente')
+
+//   // En producción, esto sería reemplazado por la llamada real a Firebase
+//   return "mock-doc-id-" + Date.now()
 // }

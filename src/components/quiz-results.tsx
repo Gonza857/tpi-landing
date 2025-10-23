@@ -32,8 +32,8 @@ export function QuizResults({ results, onRestart }: QuizResultsProps) {
     return (
         <div className="space-y-6">
             {/* Score Card */}
-            <Card className="border-2 border-emerald-200 shadow-xl overflow-hidden">
-                <div className={`bg-gradient-to-r from-${color}-500 to-${color}-600 p-8 text-center text-white`}>
+            <Card className="border-2 border-emerald-500 shadow-xl overflow-hidden">
+                <div className={`bg-gradient-to-r from-${color}-500 to-${color}-600 p-8 text-center text-emerald-900`}>
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-4 backdrop-blur-sm">
                         <Trophy className="w-10 h-10" />
                     </div>
