@@ -5,129 +5,89 @@ export interface Question {
 
 export const questions: Question[] = [
     {
+        question: "¿Qué porcentaje del agua del planeta es dulce y apta para consumo humano?",
+        options: ["Aproximadamente el 3% ✅", "Alrededor del 10%", "Casi la mitad", "Más del 70%"],
+    },
+    {
         question: "¿Qué tipo de energía aprovecha la fuerza del viento?",
-        options: ["Energía solar", "Energía eólica ✅", "Energía geotérmica", "Energía nuclear"],
+        options: ["Energía solar", "Energía eólica ✅", "Energía hidráulica", "Energía geotérmica"],
     },
     {
-        question: "¿Qué país fue pionero en el uso masivo de calentadores solares de agua?",
-        options: ["Dinamarca", "Israel ✅", "Alemania", "Brasil"],
+        question: "¿Qué país produce más energía eólica en América Latina?",
+        options: ["Brasil ✅", "Argentina", "Chile", "México"],
     },
     {
-        question: "¿Qué significa DRS en gestión ambiental?",
-        options: [
-            "Depósito y Retorno de envases ✅",
-            "Disposición Rápida Sustentable",
-            "Desarrollo Responsable Social",
-            "Desperdicio Reducido Sostenible",
-        ],
+        question: "¿Cuánto tarda en degradarse una botella plástica común?",
+        options: ["450 años aproximadamente ✅", "10 años", "50 años", "100 años"],
     },
     {
         question: "¿Qué podés hacer para ahorrar agua en casa?",
+        options: ["Cerrar la canilla mientras te lavás los dientes ✅", "Llenar la bañera", "Usar más jabón", "Regar a la tarde"],
+    },
+    {
+        question: "¿Qué porcentaje de la electricidad argentina proviene de fuentes renovables?",
+        options: ["Cerca del 30% ✅", "5%", "60%", "90%"],
+    },
+    {
+        question: "¿Qué provincia argentina se destaca por sus parques eólicos?",
+        options: ["Chubut ✅", "Formosa", "Corrientes", "Salta"],
+    },
+    {
+        question: "¿Cuántos litros de agua puede contaminar un solo litro de aceite usado?",
+        options: ["Hasta 1000 litros ✅", "10 litros", "50 litros", "100 litros"],
+    },
+    {
+        question: "¿Qué significa RAEE?",
         options: [
-            "Dejar la canilla abierta al cepillarte",
-            "Cerrar la canilla mientras te lavás los dientes ✅",
-            "Usar más jabón",
-            "Dejar correr el agua para enfriar",
+            "Residuos de Aparatos Eléctricos y Electrónicos ✅",
+            "Reciclado Ambiental Eficiente y Económico",
+            "Red de Ahorro Energético Ecológico",
+            "Reuso Avanzado de Energía Eólica",
         ],
     },
     {
-        question: "Un litro de aceite usado puede contaminar:",
-        options: ["10 litros de agua", "100 litros de agua", "1000 litros de agua ✅", "10.000 litros de agua"],
+        question: "¿Qué porcentaje de los residuos urbanos se podría reciclar si se separaran correctamente?",
+        options: ["Más del 50% ✅", "10%", "20%", "90%"],
     },
     {
-        question: "¿Qué país tiene un sistema exitoso de retorno de botellas (Pfand)?",
-        options: ["Alemania ✅", "Francia", "Chile", "Estados Unidos"],
+        question: "¿Qué práctica ayuda a reducir las emisiones de carbono?",
+        options: ["Usar transporte público o bicicleta ✅", "Usar el auto para trayectos cortos", "Comprar más ropa", "Usar aerosoles"],
     },
     {
-        question: "¿Qué representa la Economía Azul?",
-        options: [
-            "Uso del aire para generar energía",
-            "Uso sostenible de los océanos ✅",
-            "Producción industrial sin contaminación",
-            "Comercio marítimo internacional",
-        ],
+        question: "¿Cuántos árboles se necesitan para absorber el CO₂ que genera una persona por año?",
+        options: ["Entre 7 y 10 árboles ✅", "1 árbol", "100 árboles", "Ninguno"],
     },
     {
-        question: "¿Qué energía es considerada renovable?",
-        options: ["Solar ✅", "Carbón", "Gas natural", "Nuclear"],
+        question: "¿Qué material tarda más en degradarse en el ambiente?",
+        options: ["Plástico ✅", "Vidrio", "Cartón", "Papel"],
     },
     {
-        question: "En Corea del Sur, ¿cómo se controla la basura orgánica?",
-        options: [
-            "Por peso del camión",
-            "Con tachos RFID que cobran por kilo ✅",
-            "Con multas a los vecinos",
-            "Solo con compost domiciliario",
-        ],
+        question: "¿Qué ciudad argentina implementó el programa 'Buenos Aires Recicla'?",
+        options: ["Ciudad Autónoma de Buenos Aires ✅", "Rosario", "Córdoba", "La Plata"],
     },
     {
-        question: "¿Qué podés hacer con los restos de frutas y verduras en casa?",
-        options: ["Tirarlos al tacho común", "Compostarlos ✅", "Guardarlos en la heladera", "Quemarlos"],
+        question: "¿Cuánto se puede reducir la basura si se realiza compost en casa?",
+        options: ["Hasta un 40% ✅", "5%", "10%", "80%"],
     },
     {
-        question: "¿Qué significa justicia climática?",
-        options: [
-            "Que todos los países compartan responsabilidades frente al cambio climático ✅",
-            "Que cada país actúe solo",
-            "Que las empresas no participen",
-            "Que solo los ricos paguen",
-        ],
+        question: "¿Qué energía se obtiene al calentar agua con el sol?",
+        options: ["Energía solar térmica ✅", "Energía eólica", "Energía nuclear", "Energía hidráulica"],
     },
     {
-        question: "¿Qué objeto se usa para transformar la luz solar en electricidad?",
-        options: ["Panel solar ✅", "Generador diésel", "Caldera", "Turbina de gas"],
+        question: "¿Cuánto tarda en degradarse una bolsa plástica en promedio?",
+        options: ["Entre 150 y 300 años ✅", "5 años", "20 años", "500 años"],
     },
     {
-        question: "¿Qué acción ayuda a reducir residuos plásticos?",
-        options: [
-            "Comprar botellas nuevas",
-            "Reutilizar envases y evitar descartables ✅",
-            "Tirar más bolsas",
-            "Usar envoltorios innecesarios",
-        ],
+        question: "¿Qué recurso natural se utiliza para generar energía hidroeléctrica?",
+        options: ["El agua ✅", "El viento", "El carbón", "El gas natural"],
     },
     {
-        question: "¿Qué práctica cultural existe en Buenos Aires relacionada con residuos?",
-        options: [
-            "Separación en origen de secos y húmedos ✅",
-            "Arrojar basura en cualquier contenedor",
-            "Mezclar orgánicos e inorgánicos",
-            "Ninguna",
-        ],
+        question: "¿Qué porcentaje del territorio argentino tiene condiciones favorables para energía solar?",
+        options: ["Más del 70% ✅", "20%", "40%", "50%"],
     },
     {
-        question: "¿Qué recurso natural es inagotable a escala humana?",
-        options: ["Energía solar ✅", "Petróleo", "Carbón", "Gas"],
-    },
-    {
-        question: "¿Cuál es una consecuencia del derroche de agua?",
-        options: [
-            "Aumento de energía eléctrica",
-            "Pérdida de recursos naturales esenciales ✅",
-            "Mejora del suelo",
-            "Ninguna",
-        ],
-    },
-    {
-        question: "¿Dónde se encuentra el Banco Global de Semillas?",
-        options: ["Islandia", "Noruega ✅", "Suecia", "Finlandia"],
-    },
-    {
-        question: "¿Qué energía aprovecha el calor del sol para calentar agua?",
-        options: ["Energía solar térmica ✅", "Energía eólica", "Energía hidráulica", "Biomasa"],
-    },
-    {
-        question: "¿Qué hábito cotidiano ayuda al medio ambiente?",
-        options: [
-            "Dejar luces encendidas",
-            "Apagar los aparatos eléctricos cuando no se usan ✅",
-            "Usar aerosoles",
-            "Lavar con agua caliente todos los días",
-        ],
-    },
-    {
-        question: "¿Qué práctica convierte el aceite vegetal usado en combustible?",
-        options: ["Compostaje", "Producción de biodiésel ✅", "Filtración doméstica", "Separación de residuos secos"],
+        question: "¿Qué hábito cotidiano ayuda más al ahorro de energía en casa?",
+        options: ["Apagar luces y aparatos que no se usan ✅", "Usar más ventiladores", "Lavar con agua caliente", "Usar más lámparas"],
     },
 ]
 

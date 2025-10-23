@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, ChevronUp, Monitor, Smartphone, Tablet } from "lucide-react"
 import {getResultsFromFirebase} from "@/firebase";
+import React from "react"
 
 interface QuizResult {
     id: string
@@ -166,8 +167,8 @@ export function MetricsTable() {
                 </TableHeader>
                 <TableBody>
                     {results.map((result) => (
-                        <>
-                            <TableRow key={result.id} className="cursor-pointer hover:bg-gray-50">
+                        <React.Fragment key={result.id}>
+                            <TableRow className="cursor-pointer hover:bg-gray-50">
                                 <TableCell className="font-medium">{result.userName}</TableCell>
                                 <TableCell>{result.userAge ? `${result.userAge} años` : "No especificada"}</TableCell>
                                 <TableCell>
@@ -212,16 +213,16 @@ export function MetricsTable() {
                                             <h4 className="font-semibold text-gray-900">Información del Dispositivo</h4>
                                             <div className="grid gap-2 text-sm md:grid-cols-2">
                                                 <div>
-                                                    <span className="font-medium">Resolución:</span> {result.deviceInfo.screenResolution || "N/A"}
+                                                    <span className="font-medium">Resolución:</span> {result.deviceInfo?.screenResolution || "N/A"}
                                                 </div>
                                                 <div>
-                                                    <span className="font-medium">Sistema Operativo:</span> {result.deviceInfo.os}
+                                                    <span className="font-medium">Sistema Operativo:</span> {result.deviceInfo?.os}
                                                 </div>
                                                 <div>
-                                                    <span className="font-medium">Navegador:</span> {result.deviceInfo.browser}
+                                                    <span className="font-medium">Navegador:</span> {result.deviceInfo?.browser}
                                                 </div>
                                                 <div>
-                                                    <span className="font-medium">Tipo:</span> {result.deviceInfo.deviceType}
+                                                    <span className="font-medium">Tipo:</span> {result.deviceInfo?.deviceType}
                                                 </div>
                                             </div>
 
@@ -256,7 +257,7 @@ export function MetricsTable() {
                                     </TableCell>
                                 </TableRow>
                             )}
-                        </>
+                        </React.Fragment>
                     ))}
                 </TableBody>
             </Table>
