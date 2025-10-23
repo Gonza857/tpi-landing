@@ -64,4 +64,83 @@ export const questions: Question[] = [
         question: "¿Qué podés hacer con los restos de frutas y verduras en casa?",
         options: ["Tirarlos al tacho común", "Compostarlos ✅", "Guardarlos en la heladera", "Quemarlos"],
     },
+    {
+        question: "¿Qué significa justicia climática?",
+        options: [
+            "Que todos los países compartan responsabilidades frente al cambio climático ✅",
+            "Que cada país actúe solo",
+            "Que las empresas no participen",
+            "Que solo los ricos paguen",
+        ],
+    },
+    {
+        question: "¿Qué objeto se usa para transformar la luz solar en electricidad?",
+        options: ["Panel solar ✅", "Generador diésel", "Caldera", "Turbina de gas"],
+    },
+    {
+        question: "¿Qué acción ayuda a reducir residuos plásticos?",
+        options: [
+            "Comprar botellas nuevas",
+            "Reutilizar envases y evitar descartables ✅",
+            "Tirar más bolsas",
+            "Usar envoltorios innecesarios",
+        ],
+    },
+    {
+        question: "¿Qué práctica cultural existe en Buenos Aires relacionada con residuos?",
+        options: [
+            "Separación en origen de secos y húmedos ✅",
+            "Arrojar basura en cualquier contenedor",
+            "Mezclar orgánicos e inorgánicos",
+            "Ninguna",
+        ],
+    },
+    {
+        question: "¿Qué recurso natural es inagotable a escala humana?",
+        options: ["Energía solar ✅", "Petróleo", "Carbón", "Gas"],
+    },
+    {
+        question: "¿Cuál es una consecuencia del derroche de agua?",
+        options: [
+            "Aumento de energía eléctrica",
+            "Pérdida de recursos naturales esenciales ✅",
+            "Mejora del suelo",
+            "Ninguna",
+        ],
+    },
+    {
+        question: "¿Dónde se encuentra el Banco Global de Semillas?",
+        options: ["Islandia", "Noruega ✅", "Suecia", "Finlandia"],
+    },
+    {
+        question: "¿Qué energía aprovecha el calor del sol para calentar agua?",
+        options: ["Energía solar térmica ✅", "Energía eólica", "Energía hidráulica", "Biomasa"],
+    },
+    {
+        question: "¿Qué hábito cotidiano ayuda al medio ambiente?",
+        options: [
+            "Dejar luces encendidas",
+            "Apagar los aparatos eléctricos cuando no se usan ✅",
+            "Usar aerosoles",
+            "Lavar con agua caliente todos los días",
+        ],
+    },
+    {
+        question: "¿Qué práctica convierte el aceite vegetal usado en combustible?",
+        options: ["Compostaje", "Producción de biodiésel ✅", "Filtración doméstica", "Separación de residuos secos"],
+    },
 ]
+
+export function getRandomQuestions(count: number): Question[] {
+    // Create a copy of the questions array
+    const shuffled = [...questions]
+
+    // Fisher-Yates shuffle algorithm
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    }
+
+    // Return the first 'count' questions
+    return shuffled.slice(0, Math.min(count, shuffled.length))
+}
