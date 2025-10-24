@@ -78,7 +78,7 @@ export default function MetricsPage() {
                         <h1 className="text-3xl font-bold text-emerald-900 md:text-4xl">Panel de Métricas</h1>
                         <p className="mt-2 text-emerald-700">Resultados y estadísticas del quiz ambiental</p>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 flex-col md:flex-row">
                         <Button onClick={handleRefresh} disabled={isRefreshing} variant="outline" className="gap-2 bg-transparent">
                             <RefreshCw className={`h-4 w-4 ${isRefreshing ? "animate-spin" : ""}`} />
                             Actualizar
