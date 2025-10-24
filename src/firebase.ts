@@ -60,6 +60,31 @@ export async function getResultsFromFirebase() {
     }
 }
 
+export async function sendFeedbackToFirebase(data: any) {
+    try {
+        const docRef = await addDoc(collection(db, "feedback"), data)
+        console.log("Feedback guardado con ID:", docRef.id)
+        return docRef.id
+    } catch (error) {
+        console.error("Error al guardar feedback en Firebase:", error)
+        throw error
+    }
+}
+
+export async function getFeedbackFromFirebase() {
+    try {
+        const q = query(collection(db, "feedback"), orderBy("timestamp", "desc"))
+        const querySnapshot = await getDocs(q)
+        return querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }))
+    } catch (error) {
+        console.error("Error al obtener feedback de Firebase:", error)
+        throw error
+    }
+}
+
 export function getDeviceInfo() {
     if (typeof window === "undefined") {
         return {

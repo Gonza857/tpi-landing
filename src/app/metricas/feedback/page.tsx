@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ArrowLeft, Lock, RefreshCw } from "lucide-react"
 import Link from "next/link"
-import { MetricsTable } from "@/components/metrics-table"
-import { MetricsSummary } from "@/components/metrics-summary"
+import { FeedbackMetricsTable } from "@/components/feedback-metrics-table"
+import { FeedbackMetricsSummary } from "@/components/feedback-metrics-summary"
 import { toast } from "sonner"
 
-export default function MetricsPage() {
+export default function FeedbackMetricsPage() {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [password, setPassword] = useState("")
     const [refreshKey, setRefreshKey] = useState(0)
@@ -38,13 +38,13 @@ export default function MetricsPage() {
 
     if (!isAuthenticated) {
         return (
-            <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 p-4">
+            <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 p-4">
                 <Card className="w-full max-w-md">
                     <CardHeader className="text-center">
-                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100">
-                            <Lock className="h-8 w-8 text-emerald-600" />
+                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-purple-100">
+                            <Lock className="h-8 w-8 text-purple-600" />
                         </div>
-                        <CardTitle className="text-2xl">Panel de Métricas</CardTitle>
+                        <CardTitle className="text-2xl">Panel de Feedback</CardTitle>
                         <CardDescription>Ingresa la contraseña para acceder</CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -59,7 +59,7 @@ export default function MetricsPage() {
                                     autoFocus
                                 />
                             </div>
-                            <Button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700">
+                            <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">
                                 Acceder
                             </Button>
                         </form>
@@ -70,39 +70,39 @@ export default function MetricsPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 p-4 md:p-8">
+        <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 p-4 md:p-8">
             <div className="mx-auto max-w-7xl space-y-6">
                 {/* Header */}
                 <div className="flex items-center justify-between">
                     <div>
-                        <h1 className="text-3xl font-bold text-emerald-900 md:text-4xl">Panel de Métricas</h1>
-                        <p className="mt-2 text-emerald-700">Resultados y estadísticas del quiz ambiental</p>
+                        <h1 className="text-3xl font-bold text-purple-900 md:text-4xl">Panel de Feedback</h1>
+                        <p className="mt-2 text-purple-700">Análisis de respuestas sobre NeoCivita</p>
                     </div>
                     <div className="flex gap-2">
                         <Button onClick={handleRefresh} disabled={isRefreshing} variant="outline" className="gap-2 bg-transparent">
                             <RefreshCw className={`h-4 w-4 ${isRefreshing ? "animate-spin" : ""}`} />
                             Actualizar
                         </Button>
-                        <Link href="/">
+                        <Link href="/feedback">
                             <Button variant="outline" className="gap-2 bg-transparent">
                                 <ArrowLeft className="h-4 w-4" />
-                                Volver al Quiz
+                                Volver al Feedback
                             </Button>
                         </Link>
                     </div>
                 </div>
 
                 {/* Summary Cards */}
-                <MetricsSummary key={`summary-${refreshKey}`} />
+                <FeedbackMetricsSummary key={`summary-${refreshKey}`} />
 
                 {/* Results Table */}
                 <Card>
                     <CardHeader>
-                        <CardTitle>Historial de Resultados</CardTitle>
-                        <CardDescription>Todos los intentos ordenados por fecha (más reciente primero)</CardDescription>
+                        <CardTitle>Historial de Feedback</CardTitle>
+                        <CardDescription>Todas las respuestas ordenadas por fecha (más reciente primero)</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <MetricsTable key={`table-${refreshKey}`} />
+                        <FeedbackMetricsTable key={`table-${refreshKey}`} />
                     </CardContent>
                 </Card>
             </div>
