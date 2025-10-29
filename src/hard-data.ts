@@ -2,14 +2,14 @@ const recursos = [
   {
     path: "/assets/resources/energia.png",
     title: "Energía",
-    description: "Produce energía limpia con fuentes renovables",
-    value: "5520",
+    description: "Generá energía limpia con fuentes renovables",
+    value: "80%",
     trend: "up",
   },
   {
     path: "/assets/resources/contaminacion.png",
     title: "Contaminación",
-    description: "Mantén bajos los niveles de contaminación",
+    description: "Mantené los niveles de contaminación bajos",
     value: "5%",
     trend: "neutral",
   },
