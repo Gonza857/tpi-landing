@@ -116,13 +116,13 @@ function HeroSection() {
                 <div className="absolute inset-0 bg-[url('/pixel-art-city-building-game-screenshot-with-green.jpg')] bg-cover bg-center opacity-80"></div>
 
                 {/* Imagen encima del fondo */}
-                <div className="relative z-10 flex items-center justify-center w-full h-full p-4">
+                <div className="relative z-10 flex items-end justify-center w-full h-full">
                   <Image
-                    src="/assets/wireframes/menu-inicio.png"
+                    src="/assets/wireframes/vita-desafio.png"
                     alt="Imagen del menú de inicio"
-                    width={500} // resolución original de la imagen
-                    height={500} // resolución original de la imagen
-                    className="object-contain w-full h-full"
+                    width={500}
+                    height={500}
+                    className="object-contain object-bottom w-full h-full"
                   />
                 </div>
               </div>
