@@ -111,31 +111,31 @@ const wireframeObjects = [
     description: "Vita nos acompañará en nuestra aventura!",
   },
   {
-    src: `${baseWireframesRoute}/mapa-principal.jpg`,
+    src: `${baseWireframesRoute}/mapa-completo.png`,
     alt: "Mapa",
     title: "Mapa principal",
     description: "Equilibrá tus recursos y conseguí nuevas estructuras.",
   },
   {
-    src: `${baseWireframesRoute}/evento.jpg`,
+    src: `${baseWireframesRoute}/Evento.png`,
     alt: "Evento",
     title: "Eventos",
     description: "Experiencia de juego dinámica, tus decisiones valen oro.",
   },
   {
-    src: `${baseWireframesRoute}/mapa-lluvia.jpg`,
+    src: `${baseWireframesRoute}/lluvia.png`,
     alt: "Mapa contaminado",
     title: "Efectos en el mapa",
     description: "Observá como tus decisiones impactan en el ambiente.",
   },
   {
-    src: `${baseWireframesRoute}/tienda.png`,
+    src: `${baseWireframesRoute}/TiendaNueva.png`,
     alt: "Tienda",
     title: "Tienda",
     description: "Gran variedad de estructuras.",
   },
   {
-    src: `${baseWireframesRoute}/tips-vita.png`,
+    src: `${baseWireframesRoute}/consejo-vita.png`,
     alt: "Tips",
     title: "Tips e información reales",
     description:
